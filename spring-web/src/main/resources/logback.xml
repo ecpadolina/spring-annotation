@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <property name="tmp" value="logs"/>
+
+  <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+      <Pattern>%d{yyyy-MM-dd_HH:mm:ss} [%thread] [%level] %logger{36} - %msg %n</Pattern>
+    </encoder>
+  </appender>
+
+  <appender name="rollingFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${tmp}/log_files.log</file>
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+      <Pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] [%level] %logger{36} - %msg %n</Pattern>
+    </encoder>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <!-- daily rollover -->
+      <FileNamePattern>${tmp}/%d{yyyy-MM-dd}-spring.log</FileNamePattern>
+      <!-- keep 30 days' worth of history -->
+      <maxHistory>30</maxHistory>
+    </rollingPolicy>
+  </appender>
+
+  <logger name="org.hibernate" level="INFO" additivity="false">
+    <appender-ref ref="rollingFileAppender"/>
+    <appender-ref ref="consoleAppender"/>
+  </logger>
+  
+  <logger name="org.springframework" level="INFO" additivity="false">
+    <appender-ref ref="rollingFileAppender"/>
+    <appender-ref ref="consoleAppender"/>
+  </logger>
+
+  <logger name="ecp.spring.web" level="DEBUG" additivity="false">
+    <appender-ref ref="rollingFileAppender"/>
+    <appender-ref ref="consoleAppender"/>
+  </logger>
+
+  <root>
+    <level value="ERROR"/>
+    <appender-ref ref="rollingFileAppender"/>
+    <appender-ref ref="consoleAppender"/>
+  </root>
+</configuration>
