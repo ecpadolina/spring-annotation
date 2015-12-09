@@ -26,8 +26,7 @@ public class ContactInfo{
   
   public ContactInfo(){}
   
-  public ContactInfo(int id, String contactType, String contactInfo){
-    this.id = id;
+  public ContactInfo(String contactType, String contactInfo){
     this.contactType = contactType;
     this.contactInfo = contactInfo;
   }

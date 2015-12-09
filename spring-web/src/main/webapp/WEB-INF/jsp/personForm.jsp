@@ -13,7 +13,8 @@
 <body>
 	<jsp:include page="headers.jsp"/>
 	<h1>Person Form</h1>
-	<form:form method="POST" accept-charset="UTF-8" commandName="person">
+	<form:form method="POST" accept-charset="UTF-8" modelAttribute="person">
+		<form:input type="hidden" path="id"/>
 		<spring:message code="label.firstName"/>: <form:input path="name.firstName"/>
 		<form:errors class="error" path="name.firstName"/><br/>
 		<spring:message code="label.middleName"/>: <form:input path="name.middleName"/>

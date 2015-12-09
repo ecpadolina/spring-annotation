@@ -47,7 +47,7 @@ public class Person{
   @JoinColumn(name="person_id")
   private Set<ContactInfo> contacts;
   @ManyToMany(fetch = FetchType.EAGER, 
-              cascade = CascadeType.ALL)
+              cascade = CascadeType.PERSIST)
   @JoinTable(name="person_role", 
              joinColumns = @JoinColumn(name = "person_id"), 
              inverseJoinColumns = @JoinColumn(name = "role_id"))
