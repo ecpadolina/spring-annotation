@@ -2,7 +2,7 @@
 	<div> <a href="/role"> Roles </a> <a href="/role/add"> Add Role </a>
 	</div>
 	<div>
-		<a href="/projectIndex"> Projects </a> <a href="/addProject"> Add Project </a>
+		<a href="/project"> Projects </a> <a href="/project/add"> Add Project </a>
 	</div>
 	<div>
 		<a href="/?lang=fil">Tagalog</a>

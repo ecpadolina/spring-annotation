@@ -27,7 +27,7 @@
 					<td>${p.name}</td>
 					<td>${p.startDate}</td>
 					<td>${p.endDate}</td>
-					<td><form method="POST"><input type="hidden" name="projectId" value="${p.id}"><button type="submit">Delete</button></form><button onclick="location.href='/editProject?id=${p.id}'">Edit</button></td>
+					<td><form method="POST"><input type="hidden" name="projectId" value="${p.id}"><button type="submit">Delete</button></form><button onclick="location.href='/project/edit/${p.id}'">Edit</button></td>
 				</tr>
 			</c:forEach>     
 		</tbody>

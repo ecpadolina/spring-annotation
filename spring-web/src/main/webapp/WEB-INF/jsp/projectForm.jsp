@@ -11,10 +11,11 @@
 <body>
 	<jsp:include page="headers.jsp"/>
 	<h1>Project Form</h1>
-	<form:form method="POST" accept-charset="UTF-8" commandName="project">
-		<div>Project Name: <form:input path="name"/></div>
+	<form:form method="POST" accept-charset="UTF-8" modelAttribute="project">
+		<form:input type="hidden" path="id"/>
+		<div>Project Name: <form:input path="name"/><form:errors class="error" path="name"/></div>
 		<div>Start Date: <form:input type="date" path="startDate"/></div>
-		<div>End Date: <form:input type="date" path="endDate"/><form:errors class="error" path="endDate"/></div>
+		<div>End Date: <form:input type="date" path="endDate"/><form:errors path="endDate"/></div>
 		<br>
 		<div>
 		Select Members:<br>

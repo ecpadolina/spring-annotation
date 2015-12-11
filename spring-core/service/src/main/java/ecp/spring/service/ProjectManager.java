@@ -2,6 +2,7 @@ package ecp.spring.service;
 
 import java.util.List;
 import ecp.spring.model.Project;
+import ecp.spring.model.ProjectDTO;
 
 public interface ProjectManager {
 	
@@ -9,7 +10,7 @@ public interface ProjectManager {
 
 	public Project getProject(int id);
 	
-	public void addProject(Project project);
+	public void addProject(ProjectDTO project);
 
 	public void deleteProject(int id);
 
