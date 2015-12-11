@@ -18,7 +18,7 @@ public class ContactInfo{
   @Id
   @Column(name = "contact_id")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int id;
+  private int contactId;
   @Column(name = "contact_type")
   private String contactType;
   @Column(name = "contact_info")
@@ -31,8 +31,8 @@ public class ContactInfo{
     this.contactInfo = contactInfo;
   }
   
-  public void setId(int id){
-    this.id = id;
+  public void setId(int contactId){
+    this.contactId = contactId;
   }
   
   public void setContactType(String contactType){
@@ -43,8 +43,8 @@ public class ContactInfo{
     this.contactInfo = contactInfo;
   }
   
-  public int getId(){
-    return id;
+  public int getContactId(){
+    return contactId;
   }
   
   public String getContactType(){

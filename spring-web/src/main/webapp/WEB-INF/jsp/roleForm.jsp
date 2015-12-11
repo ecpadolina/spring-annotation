@@ -11,7 +11,8 @@
 <body>
 	<jsp:include page="headers.jsp"/>
 	<h1>Role Form</h1>
-	<form:form metohd="POST" accept-charset="UTF-8" commandName="role">
+	<form:form metohd="POST" accept-charset="UTF-8" modelAttribute="role">
+		<form:input path="roleId" name="roleId" type="hidden"/>
 		Role Name: <form:input path="roleType" name="roleType" placeholder="Role Name"/>
 		<button id="create" type="submit" value="submit">Submit</button>
 		<button type="reset">Reset</button>

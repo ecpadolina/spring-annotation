@@ -10,16 +10,16 @@
 	<jsp:include page="headers.jsp"/>
 	<h1>Role Management</h1>
 	<br>
-	<form method="GET">
-	Sort By: <select name="column">
+	<form>
+	Sort By: <select id="column" name="column">
 			<option value="id">Id</option>
 			<option value="roleType">Role Type</option>
 		</select>
-		<select name="order">
+		<select id="order" name="order">
 			<option value="1">Ascending</option>
 			<option value="2">Descending</option>
 		</select>
-		<button type="submit">Search</button>
+		<button id="roleSearch" type="submit">Search</button>
 	</form>
 	<br>
 	<table>
@@ -30,16 +30,17 @@
 	            <th>Actions</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody id="roleTable">
 	         <c:forEach var="r" items="${roleList}">
 				<tr>
 					<td>${r.roleId}</td>
 					<td>${r.roleType}</td>
-					<td><form method="POST"><input type="hidden" name="roleId" value="${r.roleId}"/><input type="submit" value="Delete"/></form><button onclick="location.href='/editRole?id=${r.roleId}'">Edit</button>
-					<button onclick="location.href='/editRole/1'"/>Edit</button></td>
+					<td><form method="POST"><input type="hidden" name="roleId" value="${r.roleId}"/><input type="submit" value="Delete"/></form><button onclick="location.href='/role/edit/${r.roleId}'">Edit</button></td>
 				</tr>
 			</c:forEach>     
 		</tbody>
 	</table>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="<c:url value="resources/scripts.js"/>"></script>
 </body>
 </html>

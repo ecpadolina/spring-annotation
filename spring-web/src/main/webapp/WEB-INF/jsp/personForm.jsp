@@ -52,7 +52,7 @@
 			<br>
 		<c:forEach var="c" items="${contacts}">
 			<div>${c.contactType}: <input type="text" value="${c.contactInfo}" name="contactInfo"/> 
-			<input type="hidden" value="${c.id}" name="contactId">
+			<input type="hidden" value="${c.contactId}" name="contactId">
 			<input type="hidden" value="${c.contactType}" name="contactType"/>
 			<button class="delete">Remove</button> <!--form:errors class="error" path="contacts"/--></div>
 		</c:forEach>

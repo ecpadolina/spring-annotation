@@ -46,7 +46,7 @@
 					<td>${p.birthday}</td>
 					<td>${p.gwa}</td>
 					<td>
-						<form method="POST"><input type="hidden" name="id" value="${p.id}"/><input type="submit" value="Delete"/></form><button onclick="location.href='/editPerson?id=${p.id}'">Edit</button></td>
+						<form method="POST"><input type="hidden" name="id" value="${p.id}"/><input type="submit" value="Delete"/></form><button onclick="location.href='/person/edit/${p.id}'">Edit</button></td>
 				</tr>
 			</c:forEach>     
 		</tbody>

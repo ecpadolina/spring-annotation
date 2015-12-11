@@ -9,9 +9,10 @@
     <title>Person Management - Person Form</title>
 </head>
 <body>
+	<jsp:include page="headers.jsp"/>
 	<h1>File Uploading</h1>
 	<br>
-	    <form method="POST"  commandName="uploadFile" enctype="multipart/form-data">
+	    <form method="POST" commandName="uploadFile" enctype="multipart/form-data">
 	       	<input type="file" name="file"/><br/>
 	        <button type="submit" name="submit">Upload</button>
 	    </form>
@@ -19,3 +20,4 @@
 </html>
 
 
+	

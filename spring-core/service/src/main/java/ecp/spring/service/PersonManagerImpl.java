@@ -2,6 +2,8 @@ package ecp.spring.service;
 
 import ecp.spring.dao.PersonDaoImpl;
 import ecp.spring.model.Person;
+import ecp.spring.model.PersonDTO;
+import ecp.spring.service.PersonTransformer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -16,6 +18,10 @@ public class PersonManagerImpl implements PersonManager{
 
   @Autowired
   private PersonDaoImpl personDaoImpl;
+
+  @Autowired
+  private PersonTransformer personTransformer;
+
   private final Logger logger = LoggerFactory.getLogger(PersonManagerImpl.class);
   
   public void addPerson(Person person){
@@ -43,7 +49,6 @@ public class PersonManagerImpl implements PersonManager{
   public List listPerson(int roleId, int order, String column){
     logger.info("Person Service listPerson() method");
     return personDaoImpl.listPerson(roleId, order,column);
-
   }
 
   /*public List listPersonWithRoles(int roleId){

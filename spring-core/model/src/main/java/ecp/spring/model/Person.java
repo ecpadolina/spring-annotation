@@ -2,6 +2,7 @@ package ecp.spring.model;
 
 import java.util.Date;
 import java.util.Set;
+import java.util.HashSet;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -110,7 +111,7 @@ public class Person{
     if(this.contacts == null){
       this.contacts = contacts;
     } else {
-      this.contacts.clear();
+      this.contacts = new HashSet<ContactInfo>();
       this.contacts.addAll(contacts);
     }
   }

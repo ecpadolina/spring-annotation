@@ -1,5 +1,5 @@
-	<div><a href="/">Person</a> <a href="/addPerson">Add Person</a> <a href="/uploadFile">Upload File</a> </div>
-	<div> <a href="/roleIndex"> Roles </a> <a href="/addRole"> Add Role </a>
+	<div><a href="/">Person</a> <a href="/person/add">Add Person</a> <a href="/person/upload">Upload File</a> </div>
+	<div> <a href="/role"> Roles </a> <a href="/role/add"> Add Role </a>
 	</div>
 	<div>
 		<a href="/projectIndex"> Projects </a> <a href="/addProject"> Add Project </a>

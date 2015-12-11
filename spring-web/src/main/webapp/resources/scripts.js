@@ -23,11 +23,10 @@ $(document).ready(function() {
     });
 
     $("#search").click(function(event){
-      console.log("a");
       var role = $("#role").val();
       var column = $("#column").val();
       var order = $("#order").val();
-
+      
       $.ajax({
         url: "/",
         dataType: "json",
@@ -38,7 +37,6 @@ $(document).ready(function() {
         },
 
         success:function(persons){
-          console.log("a");
           $("#table").children().remove();
           $.each(persons, function(i, person){
             $("#table").append("<tr><td>" + person.id + "</td>" + 
@@ -46,11 +44,37 @@ $(document).ready(function() {
               "<td>" + new Date(person.birthday).toISOString().slice(0,10) + "</td>" +
               "<td>" + person.gwa + "</td>" +
               "<td><form method=\"POST\"><input type=\"hidden\" name=\"id\" value=\""+person.id+"\"/><input type=\"submit\" value=\"Delete\"/></form>"+
-              "<button onclick=\"location.href\'/editPerson?id=" + person.id + "\'\">Edit</button></td></tr>");
+              "<button onclick=\"location.href=\'/person/edit/" + person.id + "\'\">Edit</button></td></tr>");
           });
         },
         error:function(){
             console.log("error");
+        },
+      });
+      event.preventDefault();
+    });
+
+    $("#roleSearch").click(function(event){
+      var column = $("#column").val();
+      var order = $("#order").val();
+      $.ajax({
+        url: "/role",
+        dataType: "json",
+        data:{
+            "column": column,
+            "order": order
+        },
+
+        success:function(roles){
+          $("#roleTable").children().remove();
+          $.each(roles, function(i, role){
+            $("#roleTable").append("<tr><td>" + role.roleId + "</td>" +
+              "<td>" + role.roleType + "</td>" +
+              "<td><form method=\"POST\"><input type=\"hidden\" name=\"id\" value=\"" + role.roleId + "\"/><input type=\"submit\" value=\"Delete\"/></form>"+
+              "<button onclick=\"location.href=\'/role/edit/" + role.roleId + "\'\">Edit</button></td></tr>");
+          });
+        },
+        error:function(){ console.log("error") 
         },
       });
       event.preventDefault();
